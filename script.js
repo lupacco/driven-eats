@@ -2,7 +2,7 @@ let selectedItems = 0
 
 function selectItem(item){
     let type;
-    //descibre o tipo de item verificando que classe ele possui entre as 3
+    //descobre o tipo de item verificando que classe ele possui entre as 3
     if(item.classList.contains("meal")){
         type = Array.from(document.querySelectorAll(".meal"))
     }
@@ -44,4 +44,9 @@ function checkThreeItems(){
         document.querySelector(".selectedAll").classList.add("hide")
         document.querySelector(".notSelectedAll").classList.remove("hide")
     }
+}
+
+function checkout(){
+    let screen = document.querySelector('.confirmation')
+    screen.classList.toggle('hide')
 }

@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Driven Eats</title>
-</head>
-<body>
-    <header>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Driven Eats</title>
+    </head>
+    <body>
+        <div class="confirmation hide">
+            <div class="greenBox">
+                <h2>Confirme seu pedido</h2>
+                <div>
+                    <p>Frango Yin Yang</p>
+                    <p>14,90</p>
+                </div>
+                <div>
+                    <p>Frango Yin Yang</p>
+                    <p>4,90</p>
+                </div>
+                <div>
+                    <p>Frango Yin Yang</p>
+                    <p>7,90</p>
+                </div>
+                <div class="total">
+                    <p>TOTAL</p>
+                    <p>27,70</p>
+                </div>
+                <button class="confirm">Tudo certo, pode pedir!</button>
+                <button onclick="checkout()" class="cancel">Cancelar</button>
+            </div>
+        </div>
+        <header>
         <h1>DrivenEats</h1>
         <p>Sua comida em 6 minutos</p>
     </header>
@@ -104,7 +127,7 @@
     </main>
     <div class="bottom">
         <button class="notSelectedAll">Selecione os 3 itens para fechar o pedido</button>
-        <button class="selectedAll hide">Fechar pedido</button>
+        <button onclick="checkout()" class="selectedAll hide">Fechar pedido</button>
     </div>
 </body>
 <script src="script.js"></script>
