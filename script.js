@@ -72,7 +72,7 @@ function finalizeOrder(){
 
     let msg2 = "Tenho raiva de manuais ruins"
 
-    link = `https://wa.me/5548999917321?text=${encodeURI(msg)}`
+    link = `https://wa.me/5548999917321?text=${encodeURIComponent(msg)}`
     console.log(link)
     return link
 }
