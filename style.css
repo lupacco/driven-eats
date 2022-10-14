@@ -51,6 +51,12 @@ h2{
 }
 .option-selected{
     border: solid 4px #32B72F;
+    position: relative;
+}
+.checked{
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
 }
 h3{
     font-size: 16px;

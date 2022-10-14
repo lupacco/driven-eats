@@ -21,14 +21,17 @@ function selectItem(item){
             if(option.classList.contains('option-selected')){
                 selectedItems--
                 option.classList.remove('option-selected')
+                option.querySelector('.checked').classList.add('hide')
             }
         }
     })
     //seleciona/deseleciona item em questão
     item.classList.toggle('option-selected')
+    item.querySelector('.checked').classList.toggle('hide')
     type.filter((option) => {
         if(option != item){
             option.classList.remove('option-selected')
+            option.querySelector('.checked').classList.add('hide')
         }
     })
     if(item.classList.contains("option-selected")){
