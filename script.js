@@ -74,5 +74,3 @@ function finalizeOrder(){
     return link
 }
 
-//Lucas Pagotto
-// R. Maria eduarda 238 ap 201 no Pantanal
