@@ -1,4 +1,7 @@
 let selectedItems = 0
+let name;
+let address;
+let link;
 
 function selectItem(item){
     let type;
@@ -50,3 +53,26 @@ function checkout(){
     let screen = document.querySelector('.confirmation')
     screen.classList.toggle('hide')
 }
+
+function finalizeOrder(){
+    name = prompt("Qual é o seu nome?")
+    address = prompt("Diga-nos o seu endereço, por favor")
+
+    let msg = 
+    `Olá gostaria de fazer o pedido
+    - Prato: Frango Yin Yang
+    - Bebida: Coquinha Gelada
+    - Sobremesa: Pudim
+    Total: R$ 27.70
+    Nome: ${name}
+    Endereço: ${address}`
+
+    let msg2 = "Tenho raiva de manuais ruins"
+
+    link = `https://wa.me/5548999917321?text=${encodeURI(msg)}`
+    console.log(link)
+    return link
+}
+
+//Lucas Pagotto
+// R. Maria eduarda 238 ap 201 no Pantanal
