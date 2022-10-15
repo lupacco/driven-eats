@@ -122,12 +122,15 @@ function finalizeOrder(){
     name = prompt("Qual é o seu nome?")
     address = prompt("Diga-nos o seu endereço, por favor")
 
+    let infoG = getGreenBoxPos()  
+    let total = calculateTotal()
+
     let msg = 
     `Olá gostaria de fazer o pedido
-    - Prato: Frango Yin Yang
-    - Bebida: Coquinha Gelada
-    - Sobremesa: Pudim
-    Total: R$ 27.70
+    - Prato: ${infoG[0][0].textContent}
+    - Bebida: ${infoG[0][1].textContent}
+    - Sobremesa: ${infoG[0][2].textContent}
+    Total: R$ ${total}
     Nome: ${name}
     Endereço: ${address}`
 
