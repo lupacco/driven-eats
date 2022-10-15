@@ -2,6 +2,7 @@ let selectedItems = 0
 let name;
 let address;
 let link;
+let order;
 
 function selectItem(item){
     let type;
@@ -52,9 +53,23 @@ function checkThreeItems(){
     }
 }
 
+function calculateTotal(){
+    order = Array.from(document.querySelectorAll('.option-selected'))
+    let p_meal = Number(order[0].querySelector('h4').textContent.slice(3).replace(",","."))
+    let p_drink = Number(order[1].querySelector('h4').textContent.slice(3).replace(",","."))
+    let p_dessert = Number(order[2].querySelector('h4').textContent.slice(3).replace(",","."))
+
+    let total = p_meal + p_drink + p_dessert
+
+    return total.toFixed(2)
+}
+
 function checkout(){
+    let total = calculateTotal()
     let screen = document.querySelector('.confirmation')
+    screen.querySelector('.total .price').innerHTML = String("R$ "+total)
     screen.classList.toggle('hide')
+
 }
 
 function finalizeOrder(){
@@ -70,10 +85,9 @@ function finalizeOrder(){
     Nome: ${name}
     Endereço: ${address}`
 
-    let msg2 = "Tenho raiva de manuais ruins"
+    msg = encodeURIComponent(msg)
 
-    link = `https://wa.me/5548999917321?text=${encodeURIComponent(msg)}`
-    console.log(link)
-    return link
+    link = `https://wa.me/5548999917321?text=${msg}`
+    window.open(link)
 }
 
