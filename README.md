@@ -27,7 +27,7 @@ Autor: Lucas Pagotto
 Primeiro clone o repositório remoto para o seu computador e abra a pasta criada
 
 ```bash
-git clonehttps://github.com/lupacco/projeto3-driveneats.git && cd projeto3-driveneats
+git clone https://github.com/lupacco/projeto3-driveneats.git && cd projeto3-driveneats
 ```
 
 E depois, abra o arquivo index.html no seu navegador padrão.
