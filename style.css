@@ -49,11 +49,17 @@ h2{
     padding: 12px;
     border-radius: 8px;
 }
+img{
+    width: 144px;
+    height: 87px;
+}
 .option-selected{
     border: solid 4px #32B72F;
     position: relative;
 }
 .checked{
+    width: 16px;
+    height: 16px;
     position: absolute;
     right: 8px;
     bottom: 8px;
