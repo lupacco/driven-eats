@@ -10,7 +10,7 @@ Autor: Lucas Pagotto
 </br>
 
 ## ✏️ Descrição
-<p align="justify" > Projeto que simula um app de pedir comida.</p>
+<p align="justify" > Projeto que simula um app de pedir comida. Ao finalizar pedido uma nova guia é aberta requisitando envio de mensagem no whatsapp ao restaurante com informações do pedido.</p>
 
 </br>
 
