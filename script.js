@@ -2,7 +2,6 @@ let selectedItems = 0
 let name;
 let address;
 let link;
-let order;
 
 function selectItem(item){
     let type;
@@ -53,8 +52,8 @@ function checkThreeItems(){
     }
 }
 
-function calculateTotal(){
-    order = Array.from(document.querySelectorAll('.option-selected'))
+function calculateTotal(m , d, ds){
+    let order = Array.from(document.querySelectorAll('.option-selected'))
     let p_meal = Number(order[0].querySelector('h4').textContent.slice(3).replace(",","."))
     let p_drink = Number(order[1].querySelector('h4').textContent.slice(3).replace(",","."))
     let p_dessert = Number(order[2].querySelector('h4').textContent.slice(3).replace(",","."))
@@ -63,13 +62,60 @@ function calculateTotal(){
 
     return total.toFixed(2)
 }
+function getItemsInfo(){
+    let order = Array.from(document.querySelectorAll('.option-selected'))
+    let names = []
+    let prices = []
+    //Pega nome dos pratos selecionados
+    let n_meal = order[0].querySelector('h3').textContent
+    names.push(n_meal)
+    let n_drink = order[1].querySelector('h3').textContent
+    names.push(n_drink)
+    let n_dessert = order[2].querySelector('h3').textContent
+    names.push(n_dessert)
+    //Pega preços dos pratos selecionados
+    let p_meal = Number(order[0].querySelector('h4').textContent.slice(3).replace(",","."))
+    prices.push(p_meal)
+    let p_drink = Number(order[1].querySelector('h4').textContent.slice(3).replace(",","."))
+    prices.push(p_drink)
+    let p_dessert = Number(order[2].querySelector('h4').textContent.slice(3).replace(",","."))
+    prices.push(p_dessert)
+    //Junta os dados em uma matriz
+    let infos = []
+    infos.push(names)
+    infos.push(prices)
+
+
+    return infos
+}
+
+function getGreenBoxPos(){
+    let names_pos = Array.from(document.querySelectorAll('.item-name'))
+    let prices_pos = Array.from(document.querySelectorAll('.item-price'))
+    let infos = []
+    infos.push(names_pos)
+    infos.push(prices_pos)
+
+    return infos
+}
 
 function checkout(){
+    let infos = getItemsInfo()
+    let infoG = getGreenBoxPos()     
+    
+    for(let i=0;i<infos.length;i++){
+        for(let j=0;j<infos[i].length;j++){
+            infoG[i][j].innerHTML = infos[i][j]
+        }
+    }
+    
+    //calcula total
     let total = calculateTotal()
     let screen = document.querySelector('.confirmation')
-    screen.querySelector('.total .price').innerHTML = String("R$ "+total)
-    screen.classList.toggle('hide')
 
+    screen.querySelector('.total .price').innerHTML = String("R$ "+total)
+    //some com a greenBox caso cliquem em cancelar
+    screen.classList.toggle('hide')
 }
 
 function finalizeOrder(){
